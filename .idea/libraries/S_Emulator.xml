@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="S-Emulator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/engine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ui.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
