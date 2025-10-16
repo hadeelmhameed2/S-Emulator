@@ -1,0 +1,71 @@
+/* Default Theme - Light */
+.root {
+    -fx-base: #f0f0f0;
+    -fx-background: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-accent: #4169E1;
+    -fx-default-button: #90EE90;
+    -fx-focus-color: #4169E1;
+    -fx-faint-focus-color: #4169E122;
+}
+
+.button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #000000;
+    -fx-font-weight: normal;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.button:pressed {
+    -fx-background-color: #c0c0c0;
+}
+
+.green-button {
+    -fx-background-color: #90EE90;
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: #000000;
+    -fx-font-size: 12px;
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4169E1;
+}
+
+.table-view {
+    -fx-background-color: #FFFACD;
+    -fx-border-color: #cccccc;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #4169E1;
+    -fx-text-fill: white;
+}
+
+.highlighted-row {
+    -fx-background-color: #ffff99 !important;
+}
+
+.current-instruction-row {
+    -fx-background-color: #99ff99 !important;
+}
+
+.text-area {
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Courier New", monospace;
+}
+
+.progress-bar {
+    -fx-accent: #4169E1;
+}

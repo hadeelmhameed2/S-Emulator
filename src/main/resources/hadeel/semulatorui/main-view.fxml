@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hadeel.semulatorui.MainController"
+            prefHeight="800" prefWidth="1200">
+
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="S-Emulator" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4169E1;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="loadFileBtn" text="Load File" style="-fx-background-color: #90EE90; -fx-font-weight: bold;"/>
+                <Label fx:id="filePathLabel" style="-fx-background-color: #FFE4B5; -fx-padding: 5;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ProgressBar fx:id="progressBar" visible="false"/>
+                <Label fx:id="progressLabel" visible="false"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Program/Function selector:"/>
+                <ComboBox fx:id="programSelector" prefWidth="200" style="-fx-background-color: #90EE90;"/>
+
+                <Button fx:id="collapseBtn" text="Collapse" style="-fx-background-color: #90EE90;"/>
+                <Label fx:id="currentDegreeLabel" text="Current / Maximum degree"/>
+                <Button fx:id="expandBtn" text="Expand" style="-fx-background-color: #90EE90;"/>
+
+                <Label text="Highlight selection:"/>
+                <TextField fx:id="highlightField" prefWidth="150"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Theme:"/>
+                <ComboBox fx:id="themeSelector" prefWidth="120"/>
+                <CheckBox fx:id="animationsCheckBox" text="Enable Animations" selected="true"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.7" orientation="HORIZONTAL">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Instructions table" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <Label text="# | B\S | Label | Instruction | Cycles" style="-fx-font-family: monospace;"/>
+
+                <TableView fx:id="instructionsTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #FFFACD;">
+                    <columns>
+                        <TableColumn fx:id="colBreakpoint" text="BP" prefWidth="40"/>
+                        <TableColumn fx:id="colNumber" text="#" prefWidth="50"/>
+                        <TableColumn fx:id="colType" text="B\S" prefWidth="60"/>
+                        <TableColumn fx:id="colLabel" text="Label" prefWidth="100"/>
+                        <TableColumn fx:id="colInstruction" text="Instruction" prefWidth="320"/>
+                        <TableColumn fx:id="colCycles" text="Cycles" prefWidth="80"/>
+                    </columns>
+                </TableView>
+
+                <Label fx:id="summaryLabel" text="Summary line" style="-fx-background-color: #E0E0E0; -fx-padding: 5;"/>
+
+                <Label text="Selected Instruction history chain" style="-fx-font-size: 14px;"/>
+                <TableView fx:id="historyChainTable" prefHeight="150" style="-fx-background-color: #FFFACD;"/>
+            </VBox>
+
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Debugger\Execution" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <VBox spacing="5" style="-fx-background-color: #FFFF99; -fx-padding: 10;">
+                    <Label text="Debugger\Execution Commands:" style="-fx-font-weight: bold;"/>
+                    <Button fx:id="runBtn" text="Start Regular Execution" prefWidth="200"/>
+                    <Button fx:id="debugBtn" text="Start Debug Execution" prefWidth="200"/>
+                    <Button fx:id="stepOverBtn" text="Step Over" prefWidth="200"/>
+                    <Button fx:id="stepBackBtn" text="Step Back" prefWidth="200"/>
+                    <Button fx:id="stopBtn" text="Stop" prefWidth="200"/>
+                    <Button fx:id="resumeBtn" text="Resume" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5" style="-fx-background-color: #FF69B4; -fx-padding: 10;">
+                    <Label text="Variables" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <TextArea fx:id="variablesArea" prefHeight="150" editable="false" style="-fx-font-family: monospace;"/>
+                </VBox>
+
+                <VBox spacing="5" style="-fx-background-color: #87CEEB; -fx-padding: 10;">
+                    <Label text="Execution Inputs" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="inputsArea" prefHeight="60"/>
+                </VBox>
+
+                <HBox style="-fx-background-color: #FF69B4; -fx-padding: 10;">
+                    <Label fx:id="cyclesLabel" text="Cycles" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+            <Label text="History\Statistics Table" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="historyTable" prefHeight="150">
+                <columns>
+                    <TableColumn fx:id="colRunNumber" text="Run #" prefWidth="80"/>
+                    <TableColumn fx:id="colDegree" text="Degree" prefWidth="80"/>
+                    <TableColumn fx:id="colOutput" text="Output (y)" prefWidth="100"/>
+                    <TableColumn fx:id="colCyclesUsed" text="Cycles" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Label text="Statistics Commands:"/>
+                <Button fx:id="showStatusBtn" text="show" disable="true"/>
+                <Button fx:id="rerunBtn" text="re-run" disable="true"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

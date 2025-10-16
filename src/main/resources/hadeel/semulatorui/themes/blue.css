@@ -1,0 +1,96 @@
+/* Blue Professional Theme */
+.root {
+    -fx-base: #e6f3ff;
+    -fx-background: #f0f8ff;
+    -fx-control-inner-background: #ffffff;
+    -fx-accent: #0066cc;
+    -fx-default-button: #4da6ff;
+    -fx-focus-color: #0066cc;
+    -fx-faint-focus-color: #0066cc22;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #4da6ff, #0066cc);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-border-color: #0066cc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66b3ff, #0080ff);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #0066cc, #004499);
+}
+
+.green-button {
+    -fx-background-color: linear-gradient(to bottom, #66ff66, #00cc00);
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: #003366;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.title-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0066cc;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 1, 1);
+}
+
+.table-view {
+    -fx-background-color: #f0f8ff;
+    -fx-border-color: #0066cc;
+    -fx-border-width: 2px;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #0066cc;
+    -fx-text-fill: white;
+}
+
+.highlighted-row {
+    -fx-background-color: #ffcc00 !important;
+    -fx-text-fill: #003366 !important;
+}
+
+.current-instruction-row {
+    -fx-background-color: #66ff99 !important;
+    -fx-text-fill: #003366 !important;
+}
+
+.text-area {
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: #003366;
+    -fx-font-family: "Lucida Console", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-border-color: #0066cc;
+}
+
+.progress-bar {
+    -fx-accent: #0066cc;
+}
+
+.text-field {
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: #003366;
+    -fx-border-color: #0066cc;
+    -fx-border-radius: 3px;
+}
+
+.combo-box {
+    -fx-background-color: #e6f3ff;
+    -fx-text-fill: #003366;
+    -fx-border-color: #0066cc;
+}
