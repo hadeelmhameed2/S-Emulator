@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hadeel.client.controller.DashboardController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="20" style="-fx-padding: 10; -fx-background-color: #2196F3;">
+            <Label fx:id="currentUserLabel" text="User: " style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold"/>
+            <Label fx:id="creditsLabel" text="Credits: 0" style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="uploadProgramBtn" text="Upload Program" onAction="#handleUploadProgram"/>
+            <Button fx:id="addCreditsBtn" text="Add Credits" onAction="#handleAddCredits"/>
+            <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <SplitPane dividerPositions="0.65" orientation="VERTICAL">
+            <!-- Top Section: Users, Programs, Functions -->
+            <SplitPane dividerPositions="0.33, 0.66">
+                <!-- Users Table -->
+                <VBox spacing="5" style="-fx-padding: 5;">
+                    <Label text="Connected Users" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+                    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colUserName" text="Username" prefWidth="100"/>
+                            <TableColumn fx:id="colUserPrograms" text="Programs" prefWidth="80"/>
+                            <TableColumn fx:id="colUserFunctions" text="Functions" prefWidth="80"/>
+                            <TableColumn fx:id="colUserCredits" text="Credits" prefWidth="80"/>
+                            <TableColumn fx:id="colUserCreditsUsed" text="Used" prefWidth="80"/>
+                            <TableColumn fx:id="colUserExecutions" text="Runs" prefWidth="60"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Programs Table -->
+                <VBox spacing="5" style="-fx-padding: 5;">
+                    <Label text="Programs" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+                    <TableView fx:id="programsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colProgramName" text="Name" prefWidth="120"/>
+                            <TableColumn fx:id="colProgramOwner" text="Owner" prefWidth="100"/>
+                            <TableColumn fx:id="colProgramInstructions" text="Instructions" prefWidth="90"/>
+                            <TableColumn fx:id="colProgramMaxDegree" text="Max Degree" prefWidth="80"/>
+                            <TableColumn fx:id="colProgramExecutions" text="Executions" prefWidth="80"/>
+                            <TableColumn fx:id="colProgramAvgCredits" text="Avg Credits" prefWidth="90"/>
+                        </columns>
+                    </TableView>
+                    <Button fx:id="runProgramBtn" text="Run Selected Program" onAction="#handleRunProgram"
+                            maxWidth="Infinity"/>
+                </VBox>
+
+                <!-- Functions Table -->
+                <VBox spacing="5" style="-fx-padding: 5;">
+                    <Label text="Functions" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+                    <TableView fx:id="functionsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colFunctionName" text="Name" prefWidth="120"/>
+                            <TableColumn fx:id="colFunctionParent" text="Parent Program" prefWidth="150"/>
+                            <TableColumn fx:id="colFunctionOwner" text="Owner" prefWidth="100"/>
+                            <TableColumn fx:id="colFunctionInstructions" text="Instructions" prefWidth="90"/>
+                            <TableColumn fx:id="colFunctionMaxDegree" text="Max Degree" prefWidth="80"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </SplitPane>
+
+            <!-- Bottom Section: Execution History -->
+            <VBox spacing="5" style="-fx-padding: 5;">
+                <Label text="Execution History (Selected User)" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+                <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colHistoryRunNumber" text="Run#" prefWidth="50"/>
+                        <TableColumn fx:id="colHistoryProgram" text="Program" prefWidth="150"/>
+                        <TableColumn fx:id="colHistoryIsFunction" text="Is Function" prefWidth="80"/>
+                        <TableColumn fx:id="colHistoryArchitecture" text="Arch" prefWidth="60"/>
+                        <TableColumn fx:id="colHistoryDegree" text="Degree" prefWidth="60"/>
+                        <TableColumn fx:id="colHistoryOutput" text="Output" prefWidth="70"/>
+                        <TableColumn fx:id="colHistoryCycles" text="Cycles" prefWidth="70"/>
+                        <TableColumn fx:id="colHistoryCredits" text="Credits" prefWidth="70"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </SplitPane>
+    </center>
+
+</BorderPane>

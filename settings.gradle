@@ -1,0 +1,5 @@
+rootProject.name = 'SEmulator'
+
+include 'engine'
+include 'server'
+include 'client'

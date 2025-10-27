@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>S-Emulator Server</display-name>
+
+    <!-- User Management Servlets -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/api/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsersServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.UsersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersServlet</servlet-name>
+        <url-pattern>/api/users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCreditsServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.AddCreditsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCreditsServlet</servlet-name>
+        <url-pattern>/api/credits/add</url-pattern>
+    </servlet-mapping>
+
+    <!-- Program Management Servlets -->
+    <servlet>
+        <servlet-name>UploadProgramServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.UploadProgramServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadProgramServlet</servlet-name>
+        <url-pattern>/api/programs/upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProgramsServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.ProgramsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProgramsServlet</servlet-name>
+        <url-pattern>/api/programs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProgramDetailsServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.ProgramDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProgramDetailsServlet</servlet-name>
+        <url-pattern>/api/programs/details/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FunctionsServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.FunctionsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FunctionsServlet</servlet-name>
+        <url-pattern>/api/functions</url-pattern>
+    </servlet-mapping>
+
+    <!-- Execution Servlets -->
+    <servlet>
+        <servlet-name>ExecuteServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.ExecuteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExecuteServlet</servlet-name>
+        <url-pattern>/api/execute</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DebugStartServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.DebugStartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DebugStartServlet</servlet-name>
+        <url-pattern>/api/debug/start</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DebugStepServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.DebugStepServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DebugStepServlet</servlet-name>
+        <url-pattern>/api/debug/step</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DebugStepBackServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.DebugStepBackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DebugStepBackServlet</servlet-name>
+        <url-pattern>/api/debug/stepback</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DebugResumeServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.DebugResumeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DebugResumeServlet</servlet-name>
+        <url-pattern>/api/debug/resume</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DebugStopServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.DebugStopServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DebugStopServlet</servlet-name>
+        <url-pattern>/api/debug/stop</url-pattern>
+    </servlet-mapping>
+
+    <!-- History Servlet -->
+    <servlet>
+        <servlet-name>ExecutionHistoryServlet</servlet-name>
+        <servlet-class>hadeel.server.servlet.ExecutionHistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExecutionHistoryServlet</servlet-name>
+        <url-pattern>/api/history</url-pattern>
+    </servlet-mapping>
+
+</web-app>

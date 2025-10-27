@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group 'hadeel'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}

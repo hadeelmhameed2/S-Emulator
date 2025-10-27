@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hadeel.client.controller.ProgramExecutionController">
+
+    <!-- Top Bar -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #2196F3;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label fx:id="programNameLabel" text="Program: " style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="creditsLabel" text="Credits: 0" style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold"/>
+                <Button fx:id="backToDashboardBtn" text="Back to Dashboard" onAction="#handleBackToDashboard"/>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Architecture:" style="-fx-text-fill: white"/>
+                <ComboBox fx:id="architectureSelector" prefWidth="100"/>
+
+                <Label text="Degree:" style="-fx-text-fill: white"/>
+                <Spinner fx:id="degreeSpinner" prefWidth="80" editable="true"/>
+                <Button fx:id="expandBtn" text="+" onAction="#handleExpand"/>
+                <Button fx:id="collapseBtn" text="-" onAction="#handleCollapse"/>
+                <Label fx:id="degreeLabel" text="Degree: 0 / ?" style="-fx-text-fill: white"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="architectureSummaryLabel" text="Selected Architecture: Generation I"
+                       style="-fx-text-fill: white; -fx-font-size: 12"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <SplitPane dividerPositions="0.7" orientation="HORIZONTAL">
+            <!-- Left: Instructions Table -->
+            <VBox spacing="5" style="-fx-padding: 5;">
+                <Label text="Program Instructions" style="-fx-font-size: 14; -fx-font-weight: bold"/>
+                <TableView fx:id="instructionsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colBreakpoint" text="BP" prefWidth="40"/>
+                        <TableColumn fx:id="colNumber" text="#" prefWidth="50"/>
+                        <TableColumn fx:id="colType" text="Type" prefWidth="50"/>
+                        <TableColumn fx:id="colArchitecture" text="Arch" prefWidth="50"/>
+                        <TableColumn fx:id="colLabel" text="Label" prefWidth="80"/>
+                        <TableColumn fx:id="colInstruction" text="Instruction" prefWidth="300"/>
+                        <TableColumn fx:id="colCycles" text="Cycles" prefWidth="60"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Right: Controls and Variables -->
+            <VBox spacing="10" style="-fx-padding: 5;">
+                <!-- Inputs -->
+                <VBox spacing="5">
+                    <Label text="Inputs (comma-separated):" style="-fx-font-weight: bold"/>
+                    <TextArea fx:id="inputsArea" promptText="e.g., 5, 10, 3" prefHeight="60"/>
+                </VBox>
+
+                <!-- Execution Controls -->
+                <VBox spacing="5">
+                    <Label text="Execution Controls:" style="-fx-font-weight: bold"/>
+                    <HBox spacing="5">
+                        <Button fx:id="runBtn" text="Run" onAction="#handleRun" prefWidth="80"/>
+                        <Button fx:id="debugBtn" text="Debug" onAction="#handleDebug" prefWidth="80"/>
+                    </HBox>
+                    <HBox spacing="5">
+                        <Button fx:id="stepOverBtn" text="Step Over" onAction="#handleStepOver" prefWidth="80"/>
+                        <Button fx:id="stepBackBtn" text="Step Back" onAction="#handleStepBack" prefWidth="80"/>
+                    </HBox>
+                    <HBox spacing="5">
+                        <Button fx:id="resumeBtn" text="Resume" onAction="#handleResume" prefWidth="80"/>
+                        <Button fx:id="stopBtn" text="Stop" onAction="#handleStop" prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <Separator/>
+
+                <!-- Variables Display -->
+                <VBox spacing="5" VBox.vgrow="ALWAYS">
+                    <Label text="Variables:" style="-fx-font-weight: bold"/>
+                    <TextArea fx:id="variablesArea" editable="false" VBox.vgrow="ALWAYS"
+                              style="-fx-font-family: monospace"/>
+                </VBox>
+
+                <!-- Cycles Display -->
+                <Label fx:id="cyclesLabelBottom" text="Cycles: 0" style="-fx-font-size: 12; -fx-font-weight: bold"/>
+            </VBox>
+        </SplitPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="hadeel.client.controller.LoginController"
+      spacing="20" alignment="CENTER" style="-fx-padding: 40">
+
+    <Label text="S-Emulator Login" style="-fx-font-size: 24; -fx-font-weight: bold"/>
+
+    <VBox spacing="10">
+        <Label text="Username:"/>
+        <TextField fx:id="usernameField" promptText="Enter username" prefWidth="300"/>
+    </VBox>
+
+    <Button fx:id="loginButton" text="Login" onAction="#handleLogin"
+            style="-fx-font-size: 14; -fx-padding: 10 40" prefWidth="150"/>
+
+    <Label fx:id="errorLabel" style="-fx-text-fill: red" visible="false"/>
+
+</VBox>
